@@ -1,9 +1,13 @@
 <script>
 import axios from 'axios';
 import { store } from './data/store';
+import Main from './components/Main.vue';
 
 export default {
   name: 'App',
+  components: {
+    Main,
+  },
   data() {
     return {
       store
@@ -13,7 +17,7 @@ export default {
     getApi() {
       axios.get(store.apiUrl)
         .then(res =>{
-          store.projects = res.data.results;
+          store.projects = res.data.projects;
         })
 
     }
@@ -27,7 +31,7 @@ export default {
 </script>
 
 <template>
-  <p>Home</p>
+  <Main />
 </template>
 
 
