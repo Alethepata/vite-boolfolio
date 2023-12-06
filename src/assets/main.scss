@@ -1,0 +1,25 @@
+@import './base.css';
+
+body{
+  background-color: rgb(11, 11, 11);
+
+  font-size: 16px;
+}
+
+.container{
+  margin: 0 auto;
+  width: 75%;
+  padding-top: 50px;
+
+}
+
+.card{
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: rgba(0, 255, 255, 0.4);
+  border-radius: 10px;
+  color: white;
+
+
+}
