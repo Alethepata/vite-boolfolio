@@ -20,7 +20,11 @@ import { store } from '../data/store';
     <div class="card">
       <div class="card-body">
         <ul>
-          <li v-for="project in store.projects" :key="project.id">{{ project.title }}</li>
+          <li v-for="project in store.projects" :key="project.id">
+            <p>{{ project.title }}</p>
+            <p class="strong">{{ project.type.name }}</p>
+            <p v-for="tecnology in project.tecnologies" :key="tecnology.id" class="italic">{{ tecnology.name }}</p>
+          </li>
         </ul>
       </div>
     </div>
@@ -28,6 +32,18 @@ import { store } from '../data/store';
 
 </template>
 
-<style>
+<style lang="scss">
+li{
+  display: flex;
+  p{
+    padding: 10px;
 
+  }
+  .strong{
+      font-weight: bold;
+  }
+  .italic{
+    font-style: italic;
+  }
+}
 </style>
