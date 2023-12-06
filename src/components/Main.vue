@@ -17,7 +17,8 @@ import { store } from '../data/store';
 <template>
 
   <div class="container">
-    <div class="card">
+    <div class="card">        
+      <h1>Projects</h1>
       <div class="card-body">
         <ul>
           <li v-for="project in store.projects" :key="project.id">
@@ -33,11 +34,14 @@ import { store } from '../data/store';
 </template>
 
 <style lang="scss">
+h1{
+  text-align: center;
+}
 li{
   display: flex;
+  
   p{
     padding: 10px;
-
   }
   .strong{
       font-weight: bold;
