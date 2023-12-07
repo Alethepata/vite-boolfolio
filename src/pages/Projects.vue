@@ -1,17 +1,28 @@
 <script>
+import axios from 'axios';
 import { store } from '../data/store';
 
-  export default {
-    name: 'Projects',
-    data() {
-      return {
-        store
-      }
-    },
-    computed: {},
-    mounted() {},
-    methods: {}
-  }
+export default {
+  name: 'Projects',
+  data() {
+    return {
+      store
+    }
+  },
+  methods: {
+  getApi() {
+    axios.get(store.apiUrl)
+      .then(res =>{
+        store.projects = res.data.projects;
+      })
+    }
+
+},
+mounted() {
+  this.getApi();
+
+}
+}
 </script>
 
 <template>
