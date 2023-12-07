@@ -2,17 +2,24 @@
 import axios from 'axios';
 import { store } from '../data/store';
 
+import Loader from '../components/partials/Loader.vue';
+
 export default {
-  name: 'Projects',
+    name: 'Projects',
+    components: {
+        Loader
+  },
   data() {
     return {
-      store
+        store,
+        isLoaded: false
     }
   },
   methods: {
   getApi() {
     axios.get(store.apiUrl)
-      .then(res =>{
+        .then(res => {
+        this.isLoaded = true;
         store.projects = res.data.projects;
       })
     }
@@ -26,10 +33,14 @@ mounted() {
 </script>
 
 <template>
+    <div v-if="!isLoaded" class="container">
+        <Loader />
+    </div>
 
-  <div class="container">
+  <div v-else class="container">
     <div class="card">        
       <h1>Projects</h1>
+
       <div class="card-body">
         <ul>
           <li v-for="project in store.projects" :key="project.id">

@@ -2,19 +2,26 @@
 import axios from 'axios';
 import { store } from '../data/store';
 
+import Loader from '../components/partials/Loader.vue';
+
 export default {
-  name: 'ProjectDetails',
+    name: 'ProjectDetails',
+    components: {
+        Loader
+  },
   data() {
     return {
         store,
-        project: {}
+        project: {},
+        isLoaded: false
       
     }
   },
   methods: {
     getProject(slug) {
     axios.get(store.apiUrl + '/' + slug)
-      .then(res =>{
+        .then(res => {
+        this.isLoaded = true;
         this.project = res.data.project;
       })
     }
@@ -28,8 +35,10 @@ mounted() {
 </script>
 
 <template>
-
-  <div class="container">
+  <div v-if="!isLoaded" class="container">
+        <Loader />
+  </div>
+  <div v-else class="container">
     <div class="card">        
       <h1>Project : {{ project.title }}</h1>
       <div class="card-body">
