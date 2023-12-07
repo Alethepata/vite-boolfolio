@@ -27,12 +27,27 @@ export default {
 
 <style lang="scss">
 header{
+    background-color: rgb(52, 52, 52);
+    padding: 10px 0;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 1000;
     ul{
         display: flex;
         list-style: none;
         li{
         margin: 10px;
         }
+        a{
+            font-size: 22px;
+            &:hover{
+                color: cadetblue;
+            }
+        }
+    }
+    .router-link-exact-active{
+        color: cadetblue;
     }
 }
 </style>
