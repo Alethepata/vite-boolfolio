@@ -21,7 +21,7 @@ export default {
 
 },
 mounted() {
-  this.getProject(this.$route.params.slug);
+    this.getProject(this.$route.params.slug);
 
 }
 }
@@ -35,9 +35,8 @@ mounted() {
       <div class="card-body">
         <ul>
           <li>
-            <p>{{ project.title }}</p>
-            <p class="strong">{{ project.type.name }}</p>
-            <p v-for="tecnology in project.tecnologies" :key="tecnology.id" class="italic">{{ tecnology.name }}</p>
+            <p class="strong">Tipo : {{ project.type?.name}}</p>
+            <p v-for="tecnology in project.tecnologies" :key="tecnology.id" class="italic">Tecnologia: {{ tecnology?.name }}</p>
           </li>
         </ul>
       </div>
