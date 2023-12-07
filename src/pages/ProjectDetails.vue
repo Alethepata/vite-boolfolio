@@ -36,7 +36,12 @@ mounted() {
         <ul>
           <li>
             <p class="strong">Tipo : {{ project.type?.name}}</p>
+          </li>
+          <li>
             <p v-for="tecnology in project.tecnologies" :key="tecnology.id" class="italic">Tecnologia: {{ tecnology?.name }}</p>
+          </li>
+          <li>
+            <p>{{ project.explanation }}</p>
           </li>
         </ul>
       </div>
