@@ -50,7 +50,7 @@ mounted() {
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 h1{
   text-align: center;
 }
@@ -67,4 +67,5 @@ li{
     font-style: italic;
   }
 }
+
 </style>

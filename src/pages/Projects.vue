@@ -33,9 +33,9 @@ mounted() {
       <div class="card-body">
         <ul>
           <li v-for="project in store.projects" :key="project.id">
-            <router-link :to="{name: 'ProjectDetails', params:{slug: project.slug}}" class="text">{{ project.title }}</router-link>
-            <p class="strong">{{ project.type.name }}</p>
-            <p v-for="tecnology in project.tecnologies" :key="tecnology.id" class="italic">{{ tecnology.name }}</p>
+            <router-link :to="{name: 'ProjectDetails', params:{slug: project.slug}}">{{ project.title }}</router-link>
+            <em class="type">{{ project.type.name }}</em>
+            <em class="tecnologies" v-for="tecnology in project.tecnologies" :key="tecnology.id">{{ tecnology.name }}</em>
           </li>
         </ul>
       </div>
@@ -44,7 +44,7 @@ mounted() {
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 h1{
   text-align: center;
 }
@@ -54,14 +54,14 @@ li{
   p{
     padding: 10px;
   }
-  .strong{
+  .type{
       font-weight: bold;
+      margin: 0 10px;
   }
-  .italic{
+  .tecnologies{
     font-style: italic;
+    margin-right:10px;
   }
 }
-.text{
-    color: white;
-}
+
 </style>
