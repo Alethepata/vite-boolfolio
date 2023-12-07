@@ -33,7 +33,7 @@ mounted() {
       <div class="card-body">
         <ul>
           <li v-for="project in store.projects" :key="project.id">
-            <p>{{ project.title }}</p>
+            <router-link :to="{name: 'ProjectDetails', params:{slug: project.slug}}" class="text">{{ project.title }}</router-link>
             <p class="strong">{{ project.type.name }}</p>
             <p v-for="tecnology in project.tecnologies" :key="tecnology.id" class="italic">{{ tecnology.name }}</p>
           </li>
@@ -60,5 +60,8 @@ li{
   .italic{
     font-style: italic;
   }
+}
+.text{
+    color: white;
 }
 </style>
