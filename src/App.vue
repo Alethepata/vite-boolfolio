@@ -11,7 +11,10 @@ export default {
 
 <template>
   <Header />
-  <RouterView />
+  <main>
+    <RouterView />    
+  </main>
+
 </template>
 
 
