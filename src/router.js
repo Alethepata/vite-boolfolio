@@ -4,6 +4,7 @@ import Home from './pages/Home.vue';
 import Projects from './pages/Projects.vue';
 import About from './pages/About.vue';
 import Contacts from './pages/Contacts.vue';
+import ProjectDetails from './pages/ProjectDetails.vue';
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -27,6 +28,11 @@ const router = createRouter({
             path: '/contacts',
             name: 'Contacts',
             component: Contacts,
+        },
+        {
+            path: '/details/:slug',
+            name: 'ProjectDetails',
+            component: ProjectDetails,
         },
     ],
 })
