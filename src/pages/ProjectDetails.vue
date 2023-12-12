@@ -23,7 +23,10 @@ export default {
         .then(res => {
         this.isLoaded = true;
         this.project = res.data.project;
-      })
+        })
+      .catch(err => {
+        this.$router.push({ name: 'error-404' })
+        })
     }
 
 },
