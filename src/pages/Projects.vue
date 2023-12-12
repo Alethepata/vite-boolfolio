@@ -17,7 +17,7 @@ export default {
   },
   methods: {
   getApi() {
-    axios.get(store.apiUrl)
+    axios.get(store.apiUrl + 'projects')
         .then(res => {
         this.isLoaded = true;
         store.projects = res.data.projects;
