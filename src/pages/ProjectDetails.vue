@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     getProject(slug) {
-    axios.get(store.apiUrl + '/' + slug)
+    axios.get(store.apiUrl + 'projects/' + slug)
         .then(res => {
         this.isLoaded = true;
         this.project = res.data.project;
