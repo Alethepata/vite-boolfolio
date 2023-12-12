@@ -62,21 +62,28 @@ header{
     height: 80px;
     position: fixed;
     z-index: 1000;
-    ul{
+    nav{
         display: flex;
-        list-style: none;
-        li{
-        margin: 10px;
-        }
+        justify-content: space-around;
+        align-items: center;
+
+        ul{
+            display: flex;
+            list-style: none;
+            li{
+                margin-right: 10px;
+            }
         a{
             font-size: 22px;
             &:hover{
                 color: cadetblue;
             }
         }
+        }
+        .router-link-exact-active{
+            color: cadetblue;
+        }
     }
-    .router-link-exact-active{
-        color: cadetblue;
-    }
+
 }
 </style>
