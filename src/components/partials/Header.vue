@@ -1,12 +1,30 @@
 <script>
+import axios from 'axios';
+import { store } from '../../data/store'
+
 export default {
-    name:'Header'
+    name: 'Header',
+    data() {
+        return {
+            search: ''
+        }
+    },
+    methods: {
+        getApi() {
+            axios.get(store.apiUrl + 'search/' + this.search)
+                .then(results => {
+                    store.projects = results.data.projects;
+                    this.search = '';
+                })
+        }
+    }
 }
 </script>
 
 <template>
     <header>
         <nav>
+
             <ul>
                 <li>
                     <router-link :to="{name: 'Home'}">Home</router-link>
@@ -21,6 +39,17 @@ export default {
                     <router-link :to="{name: 'Contacts'}">Contacts</router-link>
                 </li>
             </ul>
+
+            
+            <div class="form">
+              <input
+                v-model.trim = "search"
+                placeholder = "Cerca"
+                type = "text"
+                @keyup.enter = "getApi"
+              >
+            </div>
+
         </nav>
     </header>
 </template>
