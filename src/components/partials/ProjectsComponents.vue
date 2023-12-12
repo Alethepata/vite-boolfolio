@@ -21,6 +21,7 @@ export default {
             <router-link :to="{name: 'ProjectDetails', params:{slug: project.slug}}">{{ project.title }}</router-link>
             <em class="type">{{ project.type.name }}</em>
             <em class="tecnologies" v-for="tecnology in project.tecnologies" :key="tecnology.id">{{ tecnology.name }}</em>
+            <em>{{ project.user.name }}</em>   
           </li>
         </ul>
       </div>

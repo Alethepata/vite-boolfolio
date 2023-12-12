@@ -44,6 +44,7 @@ mounted() {
   <div v-else class="container">
     <div class="card">        
       <h1>Project : {{ project.title }}</h1>
+      <em> by: {{ project.user?.name }}</em>   
       <div class="image">
       <img :src="project?.image" :alt="project?.title">
     </div>
