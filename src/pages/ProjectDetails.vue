@@ -41,6 +41,9 @@ mounted() {
   <div v-else class="container">
     <div class="card">        
       <h1>Project : {{ project.title }}</h1>
+      <div class="image">
+      <img :src="project?.image" :alt="project?.title">
+    </div>
       <div class="card-body">
         <ul>
           <li>
