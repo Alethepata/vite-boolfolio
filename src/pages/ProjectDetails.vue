@@ -44,10 +44,10 @@ mounted() {
       <div class="card-body">
         <ul>
           <li>
-            <p class="strong">Tipo : {{ project.type?.name}}</p>
+            <p class="strong">{{ project.type?.name}}</p>
           </li>
           <li>
-            <p v-for="tecnology in project.tecnologies" :key="tecnology.id" class="italic">Tecnologia: {{ tecnology?.name }}</p>
+            <p v-for="tecnology in project.tecnologies" :key="tecnology.id" class="italic">{{ tecnology?.name }}</p>
           </li>
           <li>
             <p>{{ project.explanation }}</p>
