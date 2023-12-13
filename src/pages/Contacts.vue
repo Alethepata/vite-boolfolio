@@ -9,8 +9,12 @@ export default {
 </script>
 
 <template>
-  <h1>Contacts</h1>
-  <ContactForm />
+  <div class="container">
+    <div class="card">
+      <h1>Contacts</h1>
+      <ContactForm />
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
