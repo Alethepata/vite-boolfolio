@@ -9,6 +9,10 @@ main{
   padding-top: 80px;
 }
 
+h1{
+  text-align: center;
+}
+
 .container{
   margin: 0 auto;
   width: 75%;
@@ -19,7 +23,7 @@ main{
 .card{
   width: 75%;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px;
   background-color: rgba(0, 255, 255, 0.4);
   border-radius: 10px;
   color: white;

@@ -30,15 +30,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h1{
-  text-align: center;
-}
 li{
   display: flex;
   
-  p{
-    padding: 10px;
-  }
   .type{
       font-weight: bold;
       margin: 0 10px;

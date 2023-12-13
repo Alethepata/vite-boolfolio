@@ -47,24 +47,24 @@ export default {
 <template>
     <form v-if="!success" @submit.prevent="sendForm()" >
       <div v-if="!isLoading" >
-        <div>
+        <div class="mb">
           <label for="name">Nome</label>
           <input v-model="name" type="text" name="name" id="name" />
           <p v-for="(error, index) in errors.name" :key="index">{{ error }}</p>
 
         </div>
-        <div>
+        <div class="mb">
           <label for="email">Email</label>
           <input v-model="email"  type="text" name="email" id="email" />
           <p v-for="(error, index) in errors.email" :key="index">{{ error }}</p>
         </div>
-        <div>
+        <div class="mb">
           <label for="message">Messagio</label>
           <textarea v-model="message"  name="message" id="message"></textarea>
           <p v-for="(error, index) in errors.message" :key="index">{{ error }}</p>
         </div>
         <div>
-          <button type="submit">Invia</button>
+          <button class="btn" type="submit">Invia</button>
         </div>
       </div>
       <Loader v-else />
@@ -73,6 +73,28 @@ export default {
     <div v-else>Email inviata correttamente</div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+
+label{
+    display: block;
+}
+
+.mb{
+    margin-bottom: 10px;
+}
+
+.btn{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #69b3ce;
+    color: #fff;
+    margin-top: 10px;
+    &:hover{
+        background-color: white;
+        color: #69b3ce;
+        transition: all 0.3s ease-in-out;
+    }
+}
 
 </style>
